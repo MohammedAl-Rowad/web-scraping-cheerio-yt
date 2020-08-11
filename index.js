@@ -5,8 +5,7 @@ const { generate } = require('shortid')
 const DOMScrapperComposer = require('./Composer')
 
 const init = async () => {
-  const url =
-    'https://github.com/MohammedAl-Rowad/Yedua/blob/code/Yedua-api/src/composers/DomScraper.ts'
+  const url = 'https://www.infinitysymbol.net'
   const htmlStr = await (await fetch(url)).text()
   const $ = load(htmlStr)
   writeFileSync(`./htmls/${generate()}-${Date.now()}.html`, $.html())
@@ -16,6 +15,7 @@ const init = async () => {
     `./jsons/${generate()}-${Date.now()}.json`,
     JSON.stringify(json, null, 2)
   )
+  console.log(composer.getAllEl('div').length)
 }
 
 init()

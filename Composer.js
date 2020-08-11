@@ -30,4 +30,8 @@ module.exports = class DOMScrapperComposer {
       return nodeInfo
     })
   }
+
+  getAllEl(el) {
+    return this.$(el).toArray()
+  }
 }
