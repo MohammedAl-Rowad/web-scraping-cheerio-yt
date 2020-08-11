@@ -31,7 +31,7 @@ module.exports = class DOMScrapperComposer {
     })
   }
 
-  getAllEl(el) {
-    return this.$(el).toArray()
+  sel(el) {
+    return this.$(el)
   }
 }
