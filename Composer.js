@@ -16,12 +16,12 @@ module.exports = class DOMScrapperComposer {
     return this.$(el).children().toArray()
   }
 
-  getChildData(ce) {
-    return ce.map((el) => {
+  getChildData(arrOrEl) {
+    return arrOrEl.map((el) => {
       const len = this.$(el).children().length
       const nodeInfo = {
         name: this.$(el).prop('tagName'),
-        value: len,
+        childrenCount: len,
       }
       if (len >= 1) {
         nodeInfo.children = [...this.getChildData(this.childrenArr(el))]
